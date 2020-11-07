@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-set-preferred-theme-onload="true">
+        <!-- Modals go here -->
+        <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+        <!-- Page wrapper start -->
+        <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom">
+            <!-- Sticky alerts (toasts), empty container -->
+            <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+            <div class="sticky-alerts"></div>
+            {% include navbar.html %}>
+            <!-- Content wrapper start -->
+            <div class="content-wrapper">
+                <div class="container-fluid">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10 shadow-sm">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-4 input-group">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Aircraft</span>
+                                            </div>
+                                            <select class="form-control">
+                                                <option value="" selected="selected">All</option>
+                                                <option value="option-1">F/A-18C</option>
+                                                <option value="option-2">F-16C</option>
+                                                <option value="option-3">F-15C</option>
+                                            </select>                                        
+                                        </div>
+                                        <div class="col-4"></div>
+                                        <div class="col-4 input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Search</span>
+                                            </div>
+                                            <input type="text" id="search" class="form-control" placeholder="Filter Text" />
+                                        </div>
+                                    </div>
+                                    <p class="text-justify font-size-12">
+                                        Altitute is shown in <kbd>Feet</kbd> (ft), distance in <kbd>Nautical Miles</kbd> (nm), weight in <kbd>Pounds</kbd> (lbs). All distances are maximun reach, not optimal. If
+                                        you find an error or a wrong value, contact support@byjokese.com or visit <a href="#">ED Forum Post</a> .
+                                    </p>
+                                    <table class="table table-hover table-striped" id="weaponsTable"> 
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_disabled">Icon</th>
+                                                <th>ID</th>
+                                                <th>Class</th>
+                                                <th>Guidance</th>
+                                                <th>Range</th>
+                                                <th>Weight</th>
+                                                <th>Target</th>
+                                                <th>Notes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="/img/dcs/weapon/r60.png" alt="r60" /></td>
+                                                <td><strong>AGM-122</strong></td>
+                                                <td>Bomb</td>
+                                                <td>Unguided</td>
+                                                <td>9</td>
+                                                <td>236</td>
+                                                <td class="font-size-12">Airborne Targets</td>
+                                                <td class="font-size-12">Any Weather, Day or Night<input type="hidden" name="aircrafts[]" value="[AV-8B]" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="/img/dcs/weapon/fab100.png" alt="fab100" /></td>
+                                                <td><strong>MK-81</strong></td>
+                                                <td>Bomb</td>
+                                                <td>Unguided</td>
+                                                <td>9</td>
+                                                <td>260</td>
+                                                <td class="font-size-12">Static Light to Medion Armored Targets</td>
+                                                <td class="font-size-12">Clear Skies prefered, requires Visual on Target at release<input type="hidden" name="aircrafts[]" value="[AV-8B,F-14B]" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="/img/dcs/weapon/fab100.png" alt="fab100" /></td>
+                                                <td><strong>MK-81</strong></td>
+                                                <td>Bomb</td>
+                                                <td>Unguided</td>
+                                                <td>9</td>
+                                                <td>260</td>
+                                                <td class="font-size-12">Static Light to Medion Armored Targets</td>
+                                                <td class="font-size-12">Clear Skies prefered, requires Visual on Target at release<input type="hidden" name="aircrafts[]" value="[AV-8B,F-14B]" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="https://frontsidegaming.com/img/dcs/weapon/fab100.png" alt="fab100" /></td>
+                                                <td><strong>MK-81</strong></td>
+                                                <td>Bomb</td>
+                                                <td>Unguided</td>
+                                                <td>9</td>
+                                                <td>260</td>
+                                                <td class="font-size-12">Static Light to Medion Armored Targets</td>
+                                                <td class="font-size-12">Clear Skies prefered, requires Visual on Target at release<input type="hidden" name="aircrafts[]" value="[AV-8B,F-14B]" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="/img/dcs/weapon/fab100.png" alt="fab100" /></td>
+                                                <td><strong>MK-81</strong></td>
+                                                <td>Bomb</td>
+                                                <td>Unguided</td>
+                                                <td>9</td>
+                                                <td>260</td>
+                                                <td class="font-size-12">Static Light to Medion Armored Targets</td>
+                                                <td class="font-size-12">Clear Skies prefered, requires Visual on Target at release<input type="hidden" name="aircrafts[]" value="[AV-8B,F-14B]" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="/img/dcs/weapon/fab100.png" alt="fab100" /></td>
+                                                <td><strong>AIM-9</strong></td>
+                                                <td>MIssile</td>
+                                                <td>Unguided</td>
+                                                <td>9</td>
+                                                <td>260</td>
+                                                <td class="font-size-12">Static Light to Medion Armored Targets</td>
+                                                <td class="font-size-12">Clear Skies prefered, requires Visual on Target at release<input type="hidden" name="aircrafts[]" value="[AV-8B,F-14B]" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="/img/dcs/weapon/fab100.png" alt="fab100" /></td>
+                                                <td><strong>AIM-1220</strong></td>
+                                                <td>MIssile</td>
+                                                <td>Unguided</td>
+                                                <td>9</td>
+                                                <td>260</td>
+                                                <td class="font-size-12">Static Light to Medion Armored Targets</td>
+                                                <td class="font-size-12">Clear Skies prefered, requires Visual on Target at release<input type="hidden" name="aircrafts[]" value="[AV-8B,F-14B]" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <a href="#" class="sidebar-brand"> Filters </a>
+                </div>
+                <div class="sidebar-menu-list">
+                    <h5 class="sidebar-title">Weapon Type</h5>
+                    <div class="sidebar-divider"></div>
+                    <a href="#" class="sidebar-link">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="checkbox-1" value="" />
+                            <label for="checkbox-1">Bombs</label>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="checkbox-2" value="" />
+                            <label for="checkbox-2">Missiles</label>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="checkbox-3" value="" />
+                            <label for="checkbox-3">Rockets</label>
+                        </div>
+                    </a>
+                    <h5 class="sidebar-title">Guiadance Type</h5>
+                    <div class="sidebar-divider"></div>
+                    <a href="#" class="sidebar-link">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="checkbox-4" value="" />
+                            <label for="checkbox-4">Un-Guided</label>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="checkbox-5" value="" />
+                            <label for="checkbox-5">Laser</label>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-link">
+                        <div class="custom-checkbox">
+                            <input type="checkbox" id="checkbox-6" value="" />
+                            <label for="checkbox-6">GPS</label>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Content wrapper end -->
+            <nav class="navbar navbar-fixed-bottom">
+                <!-- Navbar content with the dropup menu -->
+                <div class="navbar-content">
+                    <div class="dropdown dropup with-arrow">
+                        <button class="btn" data-toggle="dropdown" type="button" id="navbar-fixed-bottom-dropdown-toggle">
+                            Help
+                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="navbar-fixed-bottom-dropdown-toggle">
+                            <a href="#" class="dropdown-item">Tutorials</a>
+                            <a href="#" class="dropdown-item">Examples</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Support</a>
+                            <a href="#" class="dropdown-item">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navbar text -->
+                <span class="navbar-text ml-auto">
+                    <!-- ml-auto = margin-left: auto -->
+                    &copy; By-Jokese
+                </span>
+            </nav>
+        </div>
+        <!-- Page wrapper end -->
+        <!-- Halfmoon JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+        <script src="js/halfmoon.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+        <script>
+            $(document).ready( function () {
+                $('#weaponsTable').DataTable({
+                    searching: false,
+                    paging: false,
+                    autoWidth: false,
+                    "info": false
+                });
+            } );
+            var $rows = $('#weaponsTable tr');
+            $('#search').keyup(function() {
+                var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+                $rows.show().filter(function() {
+                    var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                    return !~text.indexOf(val);
+                }).hide();
+            });
+        </script>
+    </body>
+</html>
